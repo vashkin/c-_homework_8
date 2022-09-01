@@ -11,46 +11,43 @@
 */
 
 Console.Clear();
-int[,] Matrix = new int[3, 4] {  { 1, 4, 7, 2 },
+int[,] matrix = new int[3, 4] {  { 1, 4, 7, 2 },
                                  { 5, 9, 2, 3 },
                                  { 8, 4, 2, 4 } };
 
 
-int[,] sortMatrix(int[,] MatrixRealNumber)
+int[,] sortMatrix(int[,] matrix)
 {
-    int[,] max = new int[3, 4];
+    int[,] matrixSort = new int[3, 4];
     int A = 0;
-    for (int j = 0; j < MatrixRealNumber.GetLength(0); j++)
+    for (int j = 0; j < matrix.GetLength(0); j++)
     {
-        for (int i = 0; i < MatrixRealNumber.GetLength(1); i++)
+        for (int i = 0; i < matrix.GetLength(1); i++)
         {
-            for (int o = 0; o < MatrixRealNumber.GetLength(1); o++)
+            for (int o = 0; o < matrix.GetLength(1); o++)
             {
-                if (max[j, o] < MatrixRealNumber[j, i])
+                if (matrixSort[j, o] < matrix[j, i])
                 {
-                    A = max[j, o];
-                    max[j, o] = MatrixRealNumber[j, i];
-                    MatrixRealNumber[j, i] = A;
+                    A = matrixSort[j, o];
+                    matrixSort[j, o] = matrix[j, i];
+                    matrix[j, i] = A;
                 }
             }
         }
     }
-
-
-
-    return max;
+    return matrixSort;
 }
-void outMatrix(int[,] MatrixRealNumber)
+void outMatrix(int[,] matrix)
 {
-    for (int i = 0; i < MatrixRealNumber.GetLength(0); i++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
         Console.WriteLine();
-        for (int j = 0; j < MatrixRealNumber.GetLength(1); j++)
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write(" { " + MatrixRealNumber[i, j] + " } ");
+            Console.Write(" { " + matrix[i, j] + " } ");
         }
     }
 }
 
 
-outMatrix(sortMatrix(Matrix));
+outMatrix(sortMatrix(matrix));
