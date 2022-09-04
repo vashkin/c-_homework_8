@@ -11,12 +11,12 @@
  номер строки с наименьшей суммой элементов: 1 строка
 */
 
-//Console.Clear();
+Console.Clear();
 int[,] matrix = new int[4, 4] {  { 1, 4, 7, 2 },
                                  { 5, 9, 2, 3 },
                                  { 8, 4, 2, 4 },
                                  { 5, 2, 6, 7 }};
-int[] sumMatrixLine(int[,] matrix)
+int[] SumMatrixLine(int[,] matrix)
 {
     int[] sum = new int[4];
     for (int j = 0; j < matrix.GetLength(0); j++)
@@ -30,7 +30,7 @@ int[] sumMatrixLine(int[,] matrix)
     return sum;
 }
 
-int line(int[] lineS)
+int Line(int[] lineS)
 {
     int max = 0;
     int numbLine = 0;
@@ -55,7 +55,7 @@ int line(int[] lineS)
     return numbLine;
 }
 
-Console.WriteLine("номер строки с наименьшей суммой элементов: " + line(sumMatrixLine(matrix)) + " строка");
+Console.WriteLine("номер строки с наименьшей суммой элементов: " + Line(SumMatrixLine(matrix)) + " строка");
 
 
 

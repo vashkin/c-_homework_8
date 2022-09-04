@@ -11,12 +11,13 @@
 */
 
 Console.Clear();
+
 int[,] matrix = new int[3, 4] {  { 1, 4, 7, 2 },
                                  { 5, 9, 2, 3 },
                                  { 8, 4, 2, 4 } };
 
 
-int[,] sortMatrix(int[,] matrix)
+int[,] SortMatrix(int[,] matrix)
 {
     int[,] matrixSort = new int[3, 4];
     int A = 0;
@@ -37,7 +38,7 @@ int[,] sortMatrix(int[,] matrix)
     }
     return matrixSort;
 }
-void outMatrix(int[,] matrix)
+void OutMatrix(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
@@ -50,4 +51,4 @@ void outMatrix(int[,] matrix)
 }
 
 
-outMatrix(sortMatrix(matrix));
+OutMatrix(SortMatrix(matrix));

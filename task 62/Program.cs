@@ -7,13 +7,16 @@
 10 09 08 07
 */
 
+
+Console.Clear();
+
 int[,] matrix = new int[4, 4];
 
 int count = 1;
 int x = 0;
 int y = 0;
 
-void matix(int[,] matrix)
+void SpiralMatrix(int[,] matrix)
 {
     matrix[x, y] = count;
     count++;
@@ -25,10 +28,10 @@ void matix(int[,] matrix)
         y--;
     else
         x--;
-    if (matrix[x, y] == 0) { matix(matrix); }
+    if (matrix[x, y] == 0) { SpiralMatrix(matrix); }
 }
 
-void outMatrix(int[,] matrix)
+void OutMatrix(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
@@ -41,5 +44,5 @@ void outMatrix(int[,] matrix)
     }
 }
 
-matix(matrix);
-outMatrix(matrix);
+SpiralMatrix(matrix);
+OutMatrix(matrix);
